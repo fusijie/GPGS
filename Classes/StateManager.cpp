@@ -79,6 +79,15 @@ void StateManager::UnlockAchievement(const char *achievementId) {
   }
 }
 
+//By JackyFu 2014.5.20
+void StateManager::IncrementAchievement(const char *achievementId, uint32_t steps/* = 1*/)
+{
+    if (gameServices->IsAuthorized()) {
+        LOGI("Achievement Increase");
+        gameServices->Achievements().Increment(achievementId, steps);
+    }
+}
+
 void StateManager::SubmitHighScore(const char *leaderboardId, uint64_t score) {
   if (gameServices->IsAuthorized()) {
     LOGI("High score submitted");

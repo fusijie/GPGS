@@ -31,6 +31,7 @@ public:
   static void BeginUserInitiatedSignIn();
   static void SignOut();
   static void UnlockAchievement(const char *achievementId);
+  static void IncrementAchievement(const char *achievementId, uint32_t steps = 1);
   static void SubmitHighScore(const char *leaderboardId, uint64_t score);
   static void ShowAchievements();
   static void ShowLeaderboard(const char *leaderboardId);
